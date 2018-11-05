@@ -1,4 +1,5 @@
 using OpenCL
+using LinearAlgebra
 
 const sum_kernel_src = "
    __kernel void sum(__global const float *a,
@@ -32,7 +33,7 @@ r = cl.read(queue, c_buff)
 
 # check to see if our result is what we expect!
 if isapprox(norm(r - (a+b)), zero(Float32))
-    info("Success!")
+    @info("Success!")
 else
     error("Norm should be 0.0f")
 end
