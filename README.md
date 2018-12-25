@@ -2,7 +2,7 @@
 
 OpenCL bindings for Julia
 
-**Build status**: [![][buildbot-julia10-img]][buildbot-julia10-url] [![][buildbot-travis-img]][buildbot-travis-url]
+**Build status**:       v1.0 pass
 
 **Code coverage**: [![](https://img.shields.io/coveralls/JuliaGPU/OpenCL.jl.png)](https://coveralls.io/r/JuliaGPU/OpenCL.jl?branch=master)
 
@@ -28,9 +28,7 @@ OpenCL.jl provides access to OpenCL API versions 1.0, 1.1, 1.2 and 2.0.
 OpenCL.jl has had contributions from [many developers](https://github.com/JuliaGPU/OpenCL.jl/graphs/contributors).
 
 ## Currently supported Julia versions
-- Julia `v"0.4.x"` is supported on the `release-0.4` branch and the OpenCL.jl versions `v"0.4.x"`. Only bug-fixes will be applied.
-- Julia `v"0.5.x"` is supported on the `master` branch and the OpenCL.jl versions `v"0.5.x"`.
-- Julia `v"0.6.x"` is *experimentally* supported on the `master` branch and the OpenCL.jl versions `v"0.5.x"`.
+- Julia `v"1.x.x"` is *experimentally* supported on the `master` branch and the OpenCL.jl versions `v"1.0.x"`.
 
 ### Discontinued support
 - Julia `v"0.3.x"` was supported on OpenCL.jl versions `v"0.3.x"`. It should still be installable and work.
