@@ -2,16 +2,10 @@
 
 OpenCL bindings for Julia
 
-**Build status**: [![][buildbot-julia05-img]][buildbot-julia05-url] [![][buildbot-julia06-img]][buildbot-julia06-url] [![][buildbot-travis-img]][buildbot-travis-url]
+**Build status**: [![][buildbot-julia10-img]][buildbot-julia10-url] [![][buildbot-travis-img]][buildbot-travis-url]
 
 **Code coverage**: [![](https://img.shields.io/coveralls/JuliaGPU/OpenCL.jl.png)](https://coveralls.io/r/JuliaGPU/OpenCL.jl?branch=master)
 
-[buildbot-julia05-img]: http://ci.maleadt.net/shields/build.php?builder=OpenCL-julia05-x86-64bit&name=julia%200.5
-[buildbot-julia05-url]: http://ci.maleadt.net/shields/url.php?builder=OpenCL-julia05-x86-64bit
-[buildbot-julia06-img]: http://ci.maleadt.net/shields/build.php?builder=OpenCL-julia06-x86-64bit&name=julia%200.6
-[buildbot-julia06-url]: http://ci.maleadt.net/shields/url.php?builder=OpenCL-julia06-x86-64bit
-[buildbot-travis-img]: https://travis-ci.org/JuliaGPU/OpenCL.jl.svg?branch=master
-[buildbot-travis-url]: https://travis-ci.org/JuliaGPU/OpenCL.jl?branch=master
 
 Julia interface for the OpenCL parallel computation API
 
@@ -70,6 +64,7 @@ OpenCL.jl has had contributions from [many developers](https://github.com/JuliaG
 
 ```julia
 using OpenCL
+using LinearAlgebra
 
 const sum_kernel = "
    __kernel void sum(__global const float *a,
@@ -97,7 +92,7 @@ queue(k, size(a), nothing, a_buff, b_buff, c_buff)
 r = cl.read(queue, c_buff)
 
 if isapprox(norm(r - (a+b)), zero(Float32))
-    info("Success!")
+    println("Success!")
 else
     error("Norm should be 0.0f")
 end
